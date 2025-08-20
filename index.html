@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicole Viviant - Analista de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navegación -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h2>Nicole Viviant</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio/Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting">Hola, soy</span>
+                    <span class="name">Nicole Viviánt</span>
+                    <span class="role">Analista de Datos</span>
+                </h1>
+                <p class="hero-description">
+                    Especializada en transformar datos complejos en insights accionables utilizando Python, SQL y herramientas de visualización. 
+                    Mi enfoque se centra en el análisis estadístico y la creación de dashboards interactivos que impulsan decisiones estratégicas de negocio.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">
+                        <span>Ver Proyectos</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
+                        <span>Contáctame</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:ana.garcia@email.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Nicole Viviant - Analista de datos profesional" class="profile-img">
+                    <div class="floating-elements">
+                        <div class="floating-element" data-speed="2">📊</div>
+                        <div class="floating-element" data-speed="3">🐍</div>
+                        <div class="floating-element" data-speed="1.5">📈</div>
+                        <div class="floating-element" data-speed="2.5">💡</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre Mí</h2>
+                <p class="section-subtitle">Mi experiencia y trayectoria profesional</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Mi Trayectoria</h3>
+                    <p>
+                        Como analista de datos con sólidos conocimientos en Python, me especializo en extraer insights valiosos 
+                        de datasets complejos y crear visualizaciones impactantes que facilitan la toma de decisiones estratégicas.
+                    </p>
+                    <p>
+                        Mi enfoque combina análisis estadístico riguroso con storytelling efectivo, utilizando herramientas como 
+                        Pandas, Matplotlib y Power BI para transformar datos en narrativas convincentes que impulsan el crecimiento empresarial.
+                    </p>
+                    <div class="experience-highlight">
+                        <div class="highlight-item">
+                            <i class="fas fa-code"></i>
+                            <div>
+                                <h4>Python & SQL</h4>
+                                <p>Desarrollo de scripts de automatización y consultas optimizadas</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <div>
+                                <h4>Visualización de Datos</h4>
+                                <p>Creación de dashboards interactivos y reportes ejecutivos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="12">0</span>
+                            <span class="stat-label">Proyectos Completados</span>
+                            <p class="stat-description">Análisis y visualizaciones entregadas</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-count="2">0</span>
+                            <span class="stat-label">Años de Experiencia</span>
+                            <p class="stat-description">En análisis de datos y Python</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Habilidades -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mis Habilidades Técnicas</h2>
+                <p class="section-subtitle">Tecnologías y herramientas que domino para el análisis de datos</p>
+            </div>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3>Programación y Análisis</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">40%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="40%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Excel Avanzado</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Librerías y Herramientas</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Pandas & NumPy</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Matplotlib & Seaborn</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Power BI</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tools-section">
+                <h3>Herramientas y Tecnologías</h3>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Power BI</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-table"></i>
+                        <span>Excel</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-code"></i>
+                        <span>Jupyter</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Tableau</span>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Machine Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mis Proyectos</h2>
+                <p class="section-subtitle">Una selección de mis trabajos más representativos en análisis de datos</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Análisis de Ventas">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver proyecto">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Análisis de Ventas E-commerce</h3>
+                        <p class="project-description">Análisis completo de datos de ventas con identificación de patrones estacionales, segmentación de clientes y predicción de tendencias usando Python y Pandas.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Seaborn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Dashboard Financiero">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver proyecto">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Dashboard Financiero Interactivo</h3>
+                        <p class="project-description">Dashboard en Power BI con métricas KPI en tiempo real, análisis de rentabilidad y visualizaciones interactivas para reportes ejecutivos.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">DAX</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">Excel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Análisis de Marketing">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver proyecto">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Análisis de Campañas Digitales</h3>
+                        <p class="project-description">Evaluación del ROI de campañas de marketing digital con análisis de conversiones, segmentación de audiencia y optimización de presupuesto.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Google Analytics</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Análisis de Inventario">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver proyecto">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Optimización de Inventario</h3>
+                        <p class="project-description">Sistema de análisis para optimización de inventario con predicción de demanda, identificación de productos de baja rotación y alertas automáticas.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Plotly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Análisis de Recursos Humanos">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver proyecto">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Análisis de Productividad del Personal</h3>
+                        <p class="project-description">Dashboard de métricas de RRHH con análisis de productividad, rotación de personal y satisfacción laboral usando técnicas de análisis estadístico.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Análisis Predictivo">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Ver proyecto">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link" title="Ver código">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Predicción de Demanda</h3>
+                        <p class="project-description">Modelo predictivo para forecasting de ventas utilizando técnicas de machine learning básico con Python y análisis de series temporales.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">NumPy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hablemos de tu Proyecto</h2>
+                <p class="section-subtitle">¿Necesitas análisis de datos para tu empresa? ¡Estoy aquí para ayudarte!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>nicoleviviant@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+3489 516579</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Buenos Aires, Argentina</p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://github.com" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:nicoleviviant@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Asunto del proyecto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Cuéntame sobre tu proyecto de análisis de datos..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Enviar Mensaje</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Nicole Viviant - Analista de Datos. Todos los derechos reservados.</p>
+                <p>Transformando datos en decisiones inteligentes ⚡</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
