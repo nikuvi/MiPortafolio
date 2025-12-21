@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSmoothScrolling();
     initializeFloatingElements();
     initializeIntersectionObserver();
+    initializeCertificateModal();
 });
 
 // Gestión del tema (modo oscuro/claro)
@@ -186,7 +187,7 @@ function initializeIntersectionObserver() {
     
     // Observar elementos que necesitan animación
     const animatedElements = document.querySelectorAll(
-        '.about-text, .about-stats, .skill-category, .project-card, .contact-info, .contact-form, .tools-grid, .stat-card'
+        '.about-text, .about-stats, .skill-category, .project-card, .contact-info, .contact-form, .certificates-grid, .stat-card'
     );
     
     animatedElements.forEach(element => {
@@ -199,7 +200,7 @@ function initializeAnimations() {
     // Añadir clases de animación
     const slideLeftElements = document.querySelectorAll('.about-text, .contact-info');
     const slideRightElements = document.querySelectorAll('.about-stats, .contact-form');
-    const fadeUpElements = document.querySelectorAll('.skill-category, .project-card, .tools-grid');
+    const fadeUpElements = document.querySelectorAll('.skill-category, .project-card, .certificates-grid');
     
     slideLeftElements.forEach(element => {
         element.classList.add('slide-in-left');
@@ -260,7 +261,7 @@ function animateCounter(counter) {
     }, 16);
 }
 
-// Formulario de contacto mejorado
+// Formulario de contacto mejorado con Formspree
 function initializeContactForm() {
     const contactForm = document.getElementById('contact-form');
     
@@ -272,32 +273,56 @@ function initializeContactForm() {
             return;
         }
         
-        // Obtener datos del formulario
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        // Simular envío del formulario
+        // Obtener el botón de envío
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         
+        // Cambiar estado del botón
         submitBtn.innerHTML = '<span>Enviando...</span><i class="fas fa-spinner fa-spin"></i>';
         submitBtn.disabled = true;
         submitBtn.classList.add('loading');
         
-        // Simular delay de envío
-        setTimeout(() => {
-            // Mostrar mensaje de éxito
-            showNotification('¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.', 'success');
-            
-            // Resetear formulario
-            this.reset();
-            clearFormErrors(this);
-            
+        // Crear FormData para enviar a Formspree
+        const formData = new FormData(this);
+        
+        // Enviar a Formspree
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Éxito
+                showNotification('¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.', 'success');
+                
+                // Resetear formulario
+                this.reset();
+                clearFormErrors(this);
+            } else {
+                // Error en la respuesta
+                return response.json().then(data => {
+                    if (data.errors) {
+                        showNotification('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.', 'error');
+                    } else {
+                        showNotification('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.', 'error');
+                    }
+                });
+            }
+        })
+        .catch(error => {
+            // Error de red
+            console.error('Error:', error);
+            showNotification('Hubo un error de conexión. Por favor, verifica tu internet e intenta nuevamente.', 'error');
+        })
+        .finally(() => {
             // Restaurar botón
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
             submitBtn.classList.remove('loading');
-        }, 2000);
+        });
     });
     
     // Validación en tiempo real
@@ -639,8 +664,72 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.add('keyboard-navigation');
         }
     });
-    
+
     document.addEventListener('click', function() {
         document.body.classList.remove('keyboard-navigation');
     });
 });
+
+// Modal de certificados
+function initializeCertificateModal() {
+    const modal = document.getElementById('certificate-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalClose = document.querySelector('.modal-close');
+    const certificateCards = document.querySelectorAll('.certificate-card');
+
+    // Agregar evento a cada tarjeta de certificado
+    certificateCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Prevenir que se abra si se hace click en un enlace
+            if (e.target.tagName === 'A') return;
+            
+            const img = this.querySelector('.certificate-image img');
+            if (img) {
+                modal.classList.add('active');
+                modalImg.src = img.src;
+                modalImg.alt = img.alt || 'Certificado';
+                document.body.style.overflow = 'hidden';
+                
+                // Agregar animación
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                }, 10);
+            }
+        });
+        
+        // Cambiar cursor para indicar que es clickeable
+        card.style.cursor = 'pointer';
+    });
+
+    function closeModal() {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.classList.remove('active');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 300);
+    }
+
+    // Cerrar con el botón X
+    if (modalClose) {
+        modalClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeModal();
+        });
+    }
+
+    // Cerrar al hacer click en el fondo
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Cerrar con la tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
